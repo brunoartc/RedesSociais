@@ -4,8 +4,7 @@ USE gitdevsrepos;
 
 CREATE TABLE dev (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(60) NOT NULL,
-    url VARCHAR(100)
+    username VARCHAR(60) NOT NULL
 );
 
 

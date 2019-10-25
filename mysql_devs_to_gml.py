@@ -35,7 +35,9 @@ def toGml():
         reponame = reponame[0]
         tmp += '  node [\n    id "'+str(reponame)+'"\n  ]\n'
     for name_id in usernames_id:
+        print(name_id)
         devrepos = sqlconn.run('SELECT repoid FROM contributes WHERE devid=%d;' %(name_id[0]))
+        print(devrepos)
         for repoid in devrepos:
             repoid = repoid[0]
             reponame = sqlconn.run('SELECT reponame FROM repo WHERE id="%s";' %(repoid))[0][0]

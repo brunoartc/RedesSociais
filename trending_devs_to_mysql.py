@@ -29,7 +29,7 @@ class MySqlConn:
 
 
 
-def scrape(filename, trendurl):
+def scrape(trendurl):
 
     HEADERS = {
         'User-Agent'		: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:11.0) Gecko/20100101 Firefox/11.0',
@@ -46,40 +46,25 @@ def scrape(filename, trendurl):
     d = pq(r.content)
     items = d('div.Box article.Box-row')
 
-    tmp='['
     for item in items:
         i = pq(item)
         name = i(".lh-condensed a").attr("href")
         url = "https://github.com" + name
         sqlconn = MySqlConn()
         if (trendurl == 'https://github.com/trending/developers/'):
-            sqlconn.run('INSERT INTO dev (username, url) VALUES ("%s", "%s");' %(name[1:], url))
+            sqlconn.run('INSERT INTO dev (username) VALUES ("%s");' %(name[1:]))
         else:
             sqlconn.run('INSERT INTO repo (reponame, url) VALUES ("%s", "%s");' %(name[1:], url))
         sqlconn.connection.commit()
         sqlconn.connection.close()
-        tmp += '"'+u'{url}", '.format(url=url)
-    tmp = tmp[:-2]
-    tmp += ']'
-    return tmp
+    return 
 
 def job():
 
     strdate = datetime.datetime.now().strftime('%Y-%m-%d')
-    filename = '{date}.json'.format(date=strdate)
-
-    tmp = '{\n'
-
-    url = 'https://github.com/trending/'
-    tmp += '  "repos":' + scrape(filename, url) + ',\n'
 
     url = 'https://github.com/trending/developers/'
-    tmp += '  "devs":' + scrape(filename, url)
-
-    tmp+='\n}'
-
-    with open('data/' + filename, 'w') as f:
-        f.write(tmp)
+    scrape(url)
 
 
 if __name__ == '__main__':

@@ -8,7 +8,7 @@ class MySqlConn:
             'host': 'localhost',
             'user': 'chends',
             'password': '8888',
-            'database': 'gitdevsrepos'}
+            'database': 'gitreposdevs'}
         self.connection = pymysql.connect(**connection_options)
 
     def run(self, query, args=None):
@@ -16,30 +16,29 @@ class MySqlConn:
             cursor.execute(query, args)
             return cursor.fetchall()
 
-def reposToMysql():
+
+def devsToMysql():
 
     sqlconn = MySqlConn()
-    devs = sqlconn.run('SELECT username FROM dev;')
-    for dev in devs:
-        username = dev[0]
-        url = 'https://api.github.com/users/'+username+'/repos'
-
+    repos = sqlconn.run('SELECT reponame FROM repo;')
+    for repo in repos:
+        reponame = repo[0]
+        url = 'http://api.github.com/repos/'+ reponame + '/contributors?client_id=27b6c06c22f39c8b4762&client_secret=25eb0aaac1ca1e5a078a5eddd8971b8ed80627e5'
         r = requests.get(url).json()
-        print(r)
-
         for i in range(len(r)):
-            reponame = r[i]['full_name']
-            url = 'https://github.com/' + reponame
+            # reponame = r[i]['full_name']
+            devname = r[i]['login']
             sqlconn = MySqlConn()
-            devid = sqlconn.run('SELECT id FROM dev WHERE username="%s";' %(username))[0][0]
+            repoid = sqlconn.run('SELECT id FROM repo WHERE reponame="%s";' %(reponame))[0][0]
             try:
-                repoid = sqlconn.run('SELECT id FROM repo WHERE reponame="%s";' %(reponame))[0][0]
+                devid = sqlconn.run('SELECT id FROM dev WHERE username="%s";' %(devname))[0][0]
                 sqlconn.run('INSERT INTO contributes (devid, repoid) VALUES (%d, %d);' %(devid, repoid))
             except:
-                sqlconn.run('INSERT INTO repo (reponame, url) VALUES ("%s", "%s");' %(reponame, url))
-                repoid = sqlconn.run('SELECT id FROM repo WHERE reponame="%s";' %(reponame))[0][0]
+                sqlconn.run('INSERT INTO dev (username) VALUES ("%s");' %(devname))
+                devid = sqlconn.run('SELECT id FROM dev WHERE username="%s";' %(devname))[0][0]
                 sqlconn.run('INSERT INTO contributes (devid, repoid) VALUES (%d, %d);' %(devid, repoid))
             sqlconn.connection.commit()
             sqlconn.connection.close()
     return
-reposToMysql()
+
+devsToMysql()

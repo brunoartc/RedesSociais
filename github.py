@@ -11,7 +11,7 @@ def getRepos(username):
 
     #print(r)
 
-    for i in range(1):
+    for i in range(len(r)):
 
         #http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator} ???
 
