@@ -42,26 +42,29 @@ def getLanguagesFromRepos(repos, languages_search=[]):
         #print(repos[i])
 
         url = 'https://api.github.com/search/code?q=repo:'+repos[i]['full_name'] + "&client_id=a4931b3b2248ac3013bc&client_sercret=7a1798ed126acc6c16594304a46e0b1d8901d13f"
-        url = 'https://api.github.com/repos/' +repos[i]['full_name']
-        r = requests.get(url).json()
+        url = 'https://api.github.com/repos/' +repos[i]['full_name'] + "?client_id=a4931b3b2248ac3013bc&client_sercret=7a1798ed126acc6c16594304a46e0b1d8901d13f"
+        r = requests.get(url)
+        print(r)
+        if (r.status_code == 200):
+            r = r.json()
 
-        #print(r)
+            print(url, r)
 
-        languages = {}
-        for j in languages_search:
-            # check languages proximity
-            # url = 'https://api.github.com/search/code?q=language:'+(repos[i]['language'] if repos[i]['language']!=None else '') +'+repo:'+repos[i]['full_name']
-            url = 'https://api.github.com/search/code?q=language:'+ j +'+repo:'+repos[i]['full_name'] + "&client_id=a4931b3b2248ac3013bc&client_sercret=7a1798ed126acc6c16594304a46e0b1d8901d13f"
-            
-            
-            #print(url)
-            r = requests.get(url).json()
-            #print(r)
-            if (r['total_count'] > 0):
-                languages[j] = {'total_count' : r['total_count'], 'items' : r['items'][0]['name']}
-            else:
-                languages[j] = {'total_count' : r['total_count'], 'items' : None}
-        resp.append( {'full_name':repos[i]['full_name'], 'languages':languages, 'topLang' : r['language'] } )
+            languages = {}
+            for j in languages_search:
+                # check languages proximity
+                # url = 'https://api.github.com/search/code?q=language:'+(repos[i]['language'] if repos[i]['language']!=None else '') +'+repo:'+repos[i]['full_name']
+                url = 'https://api.github.com/search/code?q=language:'+ j +'+repo:'+repos[i]['full_name'] + "&client_id=a4931b3b2248ac3013bc&client_sercret=7a1798ed126acc6c16594304a46e0b1d8901d13f"
+                
+                
+                #print(url)
+                r = requests.get(url).json()
+                #print(r)
+                if (r['total_count'] > 0):
+                    languages[j] = {'total_count' : r['total_count'], 'items' : r['items'][0]['name']}
+                else:
+                    languages[j] = {'total_count' : r['total_count'], 'items' : None}
+            resp.append( {'full_name':repos[i]['full_name'], 'languages':languages, 'topLang' : r['language'] } )
 
     return resp
 
