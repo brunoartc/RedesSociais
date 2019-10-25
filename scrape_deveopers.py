@@ -9,9 +9,10 @@ for i in list(soup.find_all('article', {"class": "Box-row d-flex"})):
 	user_info = {}
 	
 	user_info['link'] = "https://github.com" + user.find('a')['href']
+	user_info['username'] = user.find('a')['href'].replace("/", "")
 	user_info['nome'] = user.find('a').get_text().replace("\n", "").replace('/[ ]{2}/g', "")
 	user_info['id'] = list(soup.find_all('article', {"class": "Box-row d-flex"})).index(i)
 	users.append(user_info)
 
-print(users)
+print(users[0])
 
