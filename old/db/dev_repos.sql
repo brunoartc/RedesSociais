@@ -10,7 +10,7 @@ CREATE TABLE dev (
 
 CREATE TABLE repo (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    reponame VARCHAR(60) NOT NULL,
+    reponame VARCHAR(100) NOT NULL,
     url VARCHAR(100)
 );
 

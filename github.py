@@ -1,11 +1,9 @@
 import requests
 
-
 def getRepos(username):
-
     resp = {}
 
-    url = 'https://api.github.com/users/'+username+'/repos?client_id=a4931b3b2248ac3013bc&client_secret=7a1798ed126acc6c16594304a46e0b1d8901d13f'
+    url = 'https://api.github.com/users/' + username + '/repos?client_id=36a1e33eece028435910&client_secret=35517c93e8fcc5f2a8c98588d53cda0fc149f5a9'
 
     r = requests.get(url).json()
 
@@ -14,11 +12,10 @@ def getRepos(username):
     #print(r)
 
     for i in range(len(r)):
-
         #http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator} ???
 
-        urll = 'http://api.github.com/repos/'+ r[i]['full_name'] + '/contributors?client_id=a4931b3b2248ac3013bc&client_secret=7a1798ed126acc6c16594304a46e0b1d8901d13f'
-        
+        urll = 'http://api.github.com/repos/' + r[i]['full_name'] + '/contributors?client_id=36a1e33eece028435910&client_secret=35517c93e8fcc5f2a8c98588d53cda0fc149f5a9'
+
         rr = requests.get(urll)
         if (rr.status_code == 200):
             rr = rr.json()
@@ -33,30 +30,29 @@ def getRepos(username):
 
 
 def getLanguagesFromRepos(repos, languages_search=[]):
-
     resp = []
-
-    
 
     for i in repos:
         #print(repos[i])
 
-        url = 'https://api.github.com/search/code?q=repo:'+repos[i]['full_name'] + "&client_id=a4931b3b2248ac3013bc&client_sercret=7a1798ed126acc6c16594304a46e0b1d8901d13f"
-        url = 'https://api.github.com/repos/' +repos[i]['full_name'] + "?client_id=a4931b3b2248ac3013bc&client_sercret=7a1798ed126acc6c16594304a46e0b1d8901d13f"
+        # url = 'https://api.github.com/search/code?q=repo:' + repos[i]['full_name'] + "&client_id=36a1e33eece028435910&client_sercret=35517c93e8fcc5f2a8c98588d53cda0fc149f5a9"
+        url = 'https://api.github.com/repos/' + repos[i]['full_name'] + "?client_id=36a1e33eece028435910&client_sercret=35517c93e8fcc5f2a8c98588d53cda0fc149f5a9"
         r = requests.get(url)
-        print(r)
+
+        # print(r.json())
+        # print(r)
         if (r.status_code == 200):
             r = r.json()
+            # print(r)
 
-            print(url, r)
+            # print(url, r)
 
             languages = {}
             for j in languages_search:
                 # check languages proximity
                 # url = 'https://api.github.com/search/code?q=language:'+(repos[i]['language'] if repos[i]['language']!=None else '') +'+repo:'+repos[i]['full_name']
-                url = 'https://api.github.com/search/code?q=language:'+ j +'+repo:'+repos[i]['full_name'] + "&client_id=a4931b3b2248ac3013bc&client_sercret=7a1798ed126acc6c16594304a46e0b1d8901d13f"
-                
-                
+                url = 'https://api.github.com/search/code?q=language:'+ j + '+repo:'+repos[i]['full_name'] + "&client_id=36a1e33eece028435910&client_sercret=35517c93e8fcc5f2a8c98588d53cda0fc149f5a9"
+
                 #print(url)
                 r = requests.get(url).json()
                 #print(r)
@@ -68,13 +64,8 @@ def getLanguagesFromRepos(repos, languages_search=[]):
 
     return resp
 
-
-
-
-
-
-
-
-print([[i['full_name'], i['topLang']] for i in getLanguagesFromRepos(getRepos('brunoartc')['repos'])])
-#print(getRepos('brunoartc')['topLang'])
+# print([[i['full_name'], i['topLang']] for i in getLanguagesFromRepos(getRepos('brunoartc')['repos'])])
+# print(getRepos('chends888')['repos'])
+tmp = {0: {'full_name': 'chends888/AWSLambdaJobsHandler', 'language': 'Python', 'contributors': ['chends888']}}
+#print(getLanguagesFromRepos(tmp))
 

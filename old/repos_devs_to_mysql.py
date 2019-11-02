@@ -23,7 +23,7 @@ def devsToMysql():
     repos = sqlconn.run('SELECT reponame FROM repo;')
     for repo in repos:
         reponame = repo[0]
-        url = 'http://api.github.com/repos/'+ reponame + '/contributors?client_id=27b6c06c22f39c8b4762&client_secret=25eb0aaac1ca1e5a078a5eddd8971b8ed80627e5'
+        url = 'http://api.github.com/repos/'+ reponame + '/contributors?anon=1'
         r = requests.get(url).json()
         for i in range(len(r)):
             # reponame = r[i]['full_name']
