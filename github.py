@@ -3,7 +3,7 @@ import requests
 def getRepos(username):
     resp = {}
 
-    url = 'https://api.github.com/users/' + username + '/repos?client_id=36a1e33eece028435910&client_secret=35517c93e8fcc5f2a8c98588d53cda0fc149f5a9'
+    url = 'https://api.github.com/users/' + username + '/repos?client_id=36a1e33eece028435910&client_secret=6f5cac313d3f620b5a2d569e8a82a5fb6d1ec876'
 
     r = requests.get(url).json()
 
@@ -14,7 +14,7 @@ def getRepos(username):
     for i in range(len(r)):
         #http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator} ???
 
-        urll = 'http://api.github.com/repos/' + r[i]['full_name'] + '/contributors?client_id=36a1e33eece028435910&client_secret=35517c93e8fcc5f2a8c98588d53cda0fc149f5a9'
+        urll = 'http://api.github.com/repos/' + r[i]['full_name'] + '/contributors?client_id=36a1e33eece028435910&client_secret=6f5cac313d3f620b5a2d569e8a82a5fb6d1ec876'
 
         rr = requests.get(urll)
         if (rr.status_code == 200):
@@ -35,8 +35,8 @@ def getLanguagesFromRepos(repos, languages_search=[]):
     for i in repos:
         #print(repos[i])
 
-        # url = 'https://api.github.com/search/code?q=repo:' + repos[i]['full_name'] + "&client_id=36a1e33eece028435910&client_sercret=35517c93e8fcc5f2a8c98588d53cda0fc149f5a9"
-        url = 'https://api.github.com/repos/' + repos[i]['full_name'] + "?client_id=36a1e33eece028435910&client_sercret=35517c93e8fcc5f2a8c98588d53cda0fc149f5a9"
+        # url = 'https://api.github.com/search/code?q=repo:' + repos[i]['full_name'] + "&client_id=36a1e33eece028435910&client_sercret=6f5cac313d3f620b5a2d569e8a82a5fb6d1ec876"
+        url = 'https://api.github.com/repos/' + repos[i]['full_name'] + "?client_id=36a1e33eece028435910&client_sercret=6f5cac313d3f620b5a2d569e8a82a5fb6d1ec876"
         r = requests.get(url)
 
         # print(r.json())
@@ -51,7 +51,7 @@ def getLanguagesFromRepos(repos, languages_search=[]):
             for j in languages_search:
                 # check languages proximity
                 # url = 'https://api.github.com/search/code?q=language:'+(repos[i]['language'] if repos[i]['language']!=None else '') +'+repo:'+repos[i]['full_name']
-                url = 'https://api.github.com/search/code?q=language:'+ j + '+repo:'+repos[i]['full_name'] + "&client_id=36a1e33eece028435910&client_sercret=35517c93e8fcc5f2a8c98588d53cda0fc149f5a9"
+                url = 'https://api.github.com/search/code?q=language:'+ j + '+repo:'+repos[i]['full_name'] + "&client_id=36a1e33eece028435910&client_sercret=6f5cac313d3f620b5a2d569e8a82a5fb6d1ec876"
 
                 #print(url)
                 r = requests.get(url).json()

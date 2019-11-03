@@ -26,10 +26,11 @@ class MySqlConn:
             cursor.execute(query, args)
             return cursor.fetchall()
 
-def scrape(trendurl):
+def scrape():
     '''
-    Insert the 25 Trending repos os the day to MySQL
+    Insert the 25 Trending repos of the day to MySQL
     '''
+    trendurl = 'https://github.com/trending?since=monthly'
     HEADERS = {
         'User-Agent'		: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:11.0) Gecko/20100101 Firefox/11.0',
         'Accept'			: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -52,11 +53,12 @@ def scrape(trendurl):
         sqlconn.connection.commit()
         sqlconn.connection.close()
 
-def job():
-    strdate = datetime.datetime.now().strftime('%Y-%m-%d')
+# def job():
+#     # strdate = datetime.datetime.now().strftime('%Y-%m-%d')
 
-    url = 'https://github.com/trending/'
-    scrape(url)
+#     # url = 'https://github.com/trending/'
+#     url = 'https://github.com/trending?since=monthly'
+#     scrape(url)
 
 
 def devsToMysql():
@@ -113,6 +115,9 @@ def reposLangsToMysql():
 
 
 def devsLangsToMysql():
+    '''
+    Insert and relation User-Language to MySQL
+    '''
     sqlconn = MySqlConn()
     devs = sqlconn.run('SELECT username FROM dev;')
     sqlconn.connection.close()
@@ -143,7 +148,7 @@ def repoLangToGml():
     sqlconn = MySqlConn()
     langs = sqlconn.run('SELECT name FROM language;')
     langs_ids = []
-    # Creating nodes for devs
+    # Creating nodes for languages
     for lang in langs:
         langname = lang[0]
         langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(langname))[0][0]
@@ -160,6 +165,7 @@ def repoLangToGml():
         repos_ids.append([repoid, reponame])
         tmp += '  node [\n    id "' + str(reponame) + '"\n  ]\n'
 
+    # Adding edges between languages and repos
     for repo in repos_ids:
         repolangs = sqlconn.run('SELECT langid FROM contains WHERE repoid=%d;' %(repo[0]))
         for langid in repolangs:
@@ -175,11 +181,47 @@ def repoLangToGml():
         f.write(tmp)
 
 
+def devLangToGml():
+    tmp = 'graph [\n  directed 1\n'
+    sqlconn = MySqlConn()
+    langs = sqlconn.run('SELECT name FROM language;')
+    # langs_ids = []
+    # Creating nodes for languages
+    for lang in langs:
+        langname = lang[0]
+        langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(langname))[0][0]
+        # langs_ids.append([langid, langname])
+        print(langname)
+        tmp += '  node [\n    id "/' + str(langname) + '"\n  ]\n'
 
+    # Creating nodes for devs
+    devs = sqlconn.run('SELECT username FROM dev;')
+    devs_ids = []
+    for dev in devs:
+        username = dev[0]
+        devid = sqlconn.run('SELECT id FROM dev WHERE username="%s";' %(username))[0][0]
+        devs_ids.append([devid, username])
+        tmp += '  node [\n    id "' + str(username) + '"\n  ]\n'
+
+    # Adding edges between languages and devs
+    for dev in devs_ids:
+        devlangs = sqlconn.run('SELECT langid FROM uses WHERE devid=%d;' %(dev[0]))
+        for langid in devlangs:
+            langid = langid[0]
+            langname = sqlconn.run('SELECT name FROM language WHERE id="%s";' %(langid))[0][0]
+            tmp += '  edge [\n    source "' + dev[1] +'"\n    target "/' + str(langname)+'"\n  ]\n'
+
+    sqlconn.connection.close()
+
+    tmp += ']'
+    filename = 'data/devs_langs.gml'
+    with open(filename, 'w') as f:
+        f.write(tmp)
 
 if __name__ == '__main__':
-    # job()
+    # scrape()
     # devsToMysql()
     # reposLangsToMysql()
+    # devsLangsToMysql()
     # repoLangToGml()
-    devsLangsToMysql()
+    devLangToGml()

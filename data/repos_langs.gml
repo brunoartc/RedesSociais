@@ -1,10 +1,7 @@
 graph [
   directed 1
   node [
-    id "C++"
-  ]
-  node [
-    id "C#"
+    id "GLSL"
   ]
   node [
     id "Python"
@@ -13,193 +10,276 @@ graph [
     id "JavaScript"
   ]
   node [
-    id "None"
+    id "V"
   ]
   node [
-    id "Go"
+    id "Java"
   ]
   node [
     id "Jupyter Notebook"
   ]
   node [
-    id "TSQL"
+    id "Shell"
+  ]
+  node [
+    id "None"
+  ]
+  node [
+    id "C++"
+  ]
+  node [
+    id "PHP"
+  ]
+  node [
+    id "TypeScript"
+  ]
+  node [
+    id "C#"
+  ]
+  node [
+    id "Dart"
+  ]
+  node [
+    id "Rust"
+  ]
+  node [
+    id "Go"
+  ]
+  node [
+    id "Ruby"
+  ]
+  node [
+    id "PowerShell"
+  ]
+  node [
+    id "CSS"
+  ]
+  node [
+    id "C"
   ]
   node [
     id "B+NULL"
   ]
   node [
-    id "notepad-plus-plus/notepad-plus-plus"
+    id "Makefile"
   ]
   node [
-    id "dotnet/orleans"
+    id "HTML"
   ]
   node [
-    id "streamlit/streamlit"
+    id "Swift"
   ]
   node [
-    id "fmtlib/fmt"
+    id "Dockerfile"
   ]
   node [
-    id "airuikun/smart-tracker"
+    id "D"
+  ]
+  node [
+    id "Nim"
+  ]
+  node [
+    id "TeX"
+  ]
+  node [
+    id "Groovy"
+  ]
+  node [
+    id "R"
+  ]
+  node [
+    id "Arduino"
+  ]
+  node [
+    id "Objective-C"
+  ]
+  node [
+    id "Emacs Lisp"
+  ]
+  node [
+    id "Clojure"
+  ]
+  node [
+    id "Erlang"
+  ]
+  node [
+    id "Standard ML"
+  ]
+  node [
+    id "Haskell"
+  ]
+  node [
+    id "Lua"
+  ]
+  node [
+    id "Scheme"
+  ]
+  node [
+    id "bloc97/Anime4K"
+  ]
+  node [
+    id "evilsocket/pwnagotchi"
+  ]
+  node [
+    id "iptv-org/iptv"
+  ]
+  node [
+    id "vlang/v"
+  ]
+  node [
+    id "google-research/google-research"
+  ]
+  node [
+    id "TheAlgorithms/Java"
+  ]
+  node [
+    id "ageron/handson-ml2"
+  ]
+  node [
+    id "robbyrussell/oh-my-zsh"
+  ]
+  node [
+    id "home-assistant/home-assistant"
+  ]
+  node [
+    id "0voice/interview_internal_reference"
+  ]
+  node [
+    id "ossu/computer-science"
+  ]
+  node [
+    id "llvm/llvm-project"
+  ]
+  node [
+    id "danielmiessler/SecLists"
+  ]
+  node [
+    id "pytorch/pytorch"
+  ]
+  node [
+    id "storybookjs/storybook"
+  ]
+  node [
+    id "geekcomputers/Python"
+  ]
+  node [
+    id "jackfrued/Python-100-Days"
+  ]
+  node [
+    id "macrozheng/mall"
+  ]
+  node [
+    id "vuejs/vue"
+  ]
+  node [
+    id "2dust/v2rayN"
+  ]
+  node [
+    id "elunez/eladmin"
   ]
   node [
     id "iGhibli/iOS-DeviceSupport"
   ]
   node [
-    id "tamarott/SinGAN"
+    id "ShusenTang/Dive-into-DL-PyTorch"
   ]
   node [
-    id "plotly/dash"
-  ]
-  node [
-    id "sdmg15/Best-websites-a-programmer-should-visit"
-  ]
-  node [
-    id "microsoft/PowerToys"
-  ]
-  node [
-    id "timqian/chinese-independent-blogs"
-  ]
-  node [
-    id "NVIDIA/DeepLearningExamples"
-  ]
-  node [
-    id "SerenityOS/serenity"
-  ]
-  node [
-    id "eth0izzle/shhgit"
-  ]
-  node [
-    id "521xueweihan/HelloGitHub"
-  ]
-  node [
-    id "facebookresearch/SlowFast"
-  ]
-  node [
-    id "MaximAbramchuck/awesome-interview-questions"
-  ]
-  node [
-    id "fengdu78/Data-Science-Notes"
-  ]
-  node [
-    id "404notf0und/Security-Data-Analysis-and-Visualization"
-  ]
-  node [
-    id "deezer/spleeter"
-  ]
-  node [
-    id "Azure/azure-quickstart-templates"
-  ]
-  node [
-    id "zeit/swr"
-  ]
-  node [
-    id "huytd/pomoday-v2"
-  ]
-  node [
-    id "azat-io/you-dont-know-js-ru"
-  ]
-  node [
-    id "itheima1/BlockChain"
+    id "mitesh77/Best-Flutter-UI-Templates"
   ]
   edge [
-    source "notepad-plus-plus/notepad-plus-plus"
-    target "C++"
+    source "bloc97/Anime4K"
+    target "GLSL"
   ]
   edge [
-    source "dotnet/orleans"
-    target "C#"
-  ]
-  edge [
-    source "streamlit/streamlit"
+    source "evilsocket/pwnagotchi"
     target "Python"
   ]
   edge [
-    source "fmtlib/fmt"
+    source "iptv-org/iptv"
+    target "JavaScript"
+  ]
+  edge [
+    source "vlang/v"
+    target "V"
+  ]
+  edge [
+    source "google-research/google-research"
+    target "Python"
+  ]
+  edge [
+    source "TheAlgorithms/Java"
+    target "Java"
+  ]
+  edge [
+    source "ageron/handson-ml2"
+    target "Jupyter Notebook"
+  ]
+  edge [
+    source "robbyrussell/oh-my-zsh"
+    target "Shell"
+  ]
+  edge [
+    source "home-assistant/home-assistant"
+    target "Python"
+  ]
+  edge [
+    source "0voice/interview_internal_reference"
+    target "Python"
+  ]
+  edge [
+    source "ossu/computer-science"
+    target "None"
+  ]
+  edge [
+    source "llvm/llvm-project"
     target "C++"
   ]
   edge [
-    source "airuikun/smart-tracker"
+    source "danielmiessler/SecLists"
+    target "PHP"
+  ]
+  edge [
+    source "pytorch/pytorch"
+    target "C++"
+  ]
+  edge [
+    source "storybookjs/storybook"
+    target "TypeScript"
+  ]
+  edge [
+    source "geekcomputers/Python"
+    target "Python"
+  ]
+  edge [
+    source "jackfrued/Python-100-Days"
+    target "Jupyter Notebook"
+  ]
+  edge [
+    source "macrozheng/mall"
+    target "Java"
+  ]
+  edge [
+    source "vuejs/vue"
     target "JavaScript"
+  ]
+  edge [
+    source "2dust/v2rayN"
+    target "C#"
+  ]
+  edge [
+    source "elunez/eladmin"
+    target "Java"
   ]
   edge [
     source "iGhibli/iOS-DeviceSupport"
     target "Python"
   ]
   edge [
-    source "tamarott/SinGAN"
-    target "Python"
-  ]
-  edge [
-    source "plotly/dash"
-    target "Python"
-  ]
-  edge [
-    source "sdmg15/Best-websites-a-programmer-should-visit"
-    target "None"
-  ]
-  edge [
-    source "microsoft/PowerToys"
-    target "C++"
-  ]
-  edge [
-    source "timqian/chinese-independent-blogs"
-    target "JavaScript"
-  ]
-  edge [
-    source "NVIDIA/DeepLearningExamples"
-    target "Python"
-  ]
-  edge [
-    source "SerenityOS/serenity"
-    target "C++"
-  ]
-  edge [
-    source "eth0izzle/shhgit"
-    target "Go"
-  ]
-  edge [
-    source "521xueweihan/HelloGitHub"
-    target "Python"
-  ]
-  edge [
-    source "facebookresearch/SlowFast"
-    target "Python"
-  ]
-  edge [
-    source "MaximAbramchuck/awesome-interview-questions"
-    target "None"
-  ]
-  edge [
-    source "fengdu78/Data-Science-Notes"
+    source "ShusenTang/Dive-into-DL-PyTorch"
     target "Jupyter Notebook"
   ]
   edge [
-    source "404notf0und/Security-Data-Analysis-and-Visualization"
-    target "TSQL"
-  ]
-  edge [
-    source "deezer/spleeter"
-    target "B+NULL"
-  ]
-  edge [
-    source "Azure/azure-quickstart-templates"
-    target "B+NULL"
-  ]
-  edge [
-    source "zeit/swr"
-    target "B+NULL"
-  ]
-  edge [
-    source "huytd/pomoday-v2"
-    target "B+NULL"
-  ]
-  edge [
-    source "azat-io/you-dont-know-js-ru"
-    target "B+NULL"
-  ]
-  edge [
-    source "itheima1/BlockChain"
-    target "B+NULL"
+    source "mitesh77/Best-Flutter-UI-Templates"
+    target "Dart"
   ]
 ]
