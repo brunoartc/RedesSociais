@@ -218,10 +218,73 @@ def devLangToGml():
     with open(filename, 'w') as f:
         f.write(tmp)
 
+def repoLangOneModeToGml():
+    tmp = 'graph [\n  directed 0\n'
+    sqlconn = MySqlConn()
+    langs = sqlconn.run('SELECT name FROM language;')
+    langs_ids = []
+    # Creating nodes for languages
+    for lang in langs:
+        langname = lang[0]
+        langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(langname))[0][0]
+        langs_ids.append([langid, langname])
+        tmp += '  node [\n    id "' + str(langname) + '"\n  ]\n'
+
+    repolen = len(sqlconn.run('SELECT id FROM repo;'))
+    meanrepos = repolen/len(sqlconn.run('SELECT langid, COUNT(langid) FROM contains GROUP BY langid;'))
+    poplangs = sqlconn.run('SELECT langid, COUNT(langid) AS c FROM contains GROUP BY langid HAVING c>%d;' %(meanrepos))
+
+    # Adding edges between languages and repos
+    for lang1 in poplangs:
+        lang1name = sqlconn.run('SELECT name FROM language WHERE id=%d;' %(lang1[0]))
+        for lang2 in poplangs:
+            lang2name = sqlconn.run('SELECT name FROM language WHERE id=%d;' %(lang2[0]))
+            if (lang1name != lang2name):
+                tmp += '  edge [\n    source "' + lang1name[0][0] +'"\n    target "' + lang2name[0][0] +'"\n  ]\n'
+
+    sqlconn.connection.close()
+    tmp += ']'
+    filename = 'data/repos_langs_onemode.gml'
+    with open(filename, 'w') as f:
+        f.write(tmp)
+
+def devLangOneModeToGml():
+    tmp = 'graph [\n  directed 1\n'
+    sqlconn = MySqlConn()
+    langs = sqlconn.run('SELECT name FROM language;')
+    langs_ids = []
+    # Creating nodes for languages
+    for lang in langs:
+        langname = lang[0]
+        langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(langname))[0][0]
+        langs_ids.append([langid, langname])
+        tmp += '  node [\n    id "' + str(langname) + '"\n  ]\n'
+
+    devlen = len(sqlconn.run('SELECT id FROM dev;'))
+    meandev = devlen/len(sqlconn.run('SELECT langid, COUNT(langid) FROM uses GROUP BY langid;'))
+    poplangs = sqlconn.run('SELECT langid, COUNT(langid) AS c FROM uses GROUP BY langid HAVING c>%d;' %(meandev))
+
+    # Adding edges between languages and repos
+    for lang1 in poplangs:
+        lang1name = sqlconn.run('SELECT name FROM language WHERE id=%d;' %(lang1[0]))
+        for lang2 in poplangs:
+            lang2name = sqlconn.run('SELECT name FROM language WHERE id=%d;' %(lang2[0]))
+            if (lang1name != lang2name):
+                tmp += '  edge [\n    source "' + lang1name[0][0] +'"\n    target "' + lang2name[0][0] +'"\n  ]\n'
+
+    sqlconn.connection.close()
+    tmp += ']'
+    filename = 'data/devs_langs_onemode.gml'
+    with open(filename, 'w') as f:
+        f.write(tmp)
+
+
 if __name__ == '__main__':
     # scrape()
     # devsToMysql()
     # reposLangsToMysql()
     # devsLangsToMysql()
     # repoLangToGml()
-    devLangToGml()
+    # devLangToGml()
+    # repoLangOneModeToGml()
+    devLangOneModeToGml()
