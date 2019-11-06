@@ -38,7 +38,8 @@ def getLanguagesFromRepos(repos, languages_search=[]):
         # url = 'https://api.github.com/search/code?q=repo:' + repos[i]['full_name'] + "&client_id=36a1e33eece028435910&client_sercret=c3a3ac09badfdb95b9679a70567a919b94501c1e"
         url = 'https://api.github.com/repos/' + repos[i]['full_name'] + "?client_id=36a1e33eece028435910&client_sercret=c3a3ac09badfdb95b9679a70567a919b94501c1e"
         r = requests.get(url)
-
+        url_languages = 'https://api.github.com/repos/' + repos[i]['full_name'] + '/languages'
+        r_lang = requests.get(url_languages)
         # print(r.json())
         # print(r)
         if (r.status_code == 200):
@@ -47,7 +48,9 @@ def getLanguagesFromRepos(repos, languages_search=[]):
 
             # print(url, r)
 
-            languages = {}
+	    
+
+            languages = r_lang.json()
             for j in languages_search:
                 # check languages proximity
                 # url = 'https://api.github.com/search/code?q=language:'+(repos[i]['language'] if repos[i]['language']!=None else '') +'+repo:'+repos[i]['full_name']
