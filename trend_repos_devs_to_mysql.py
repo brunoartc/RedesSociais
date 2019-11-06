@@ -87,6 +87,9 @@ def devsToMysql():
             sqlconn.connection.close()
 
 def reposLangsToMysql():
+    '''
+    Insert repos languages and link them in MySQL
+    '''
     sqlconn = MySqlConn()
     repos = sqlconn.run('SELECT reponame FROM repo;')
     sqlconn.connection.close()
@@ -94,24 +97,24 @@ def reposLangsToMysql():
         reponame = repo[0]
         # print(reponame)
         try:
-            repolang = getLanguagesFromRepos({0: {'full_name': reponame}})[0]['topLang']
+            repolang = getLanguagesFromRepos({0: {'full_name': reponame}})
+            print(repolang)
         except Exception as e:
             print(e)
             repolang = "B+NULL"
         # print(repolang)
         print(repolang)
-        sqlconn = MySqlConn()
-        repoid = sqlconn.run('SELECT id FROM repo WHERE reponame="%s";' %(reponame))[0][0]
-        try:
-            # sqlconn.run('SELECT * FROM language WHERE name="%s";' %(repolang))
-            langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(repolang))[0][0]
-            sqlconn.run('INSERT INTO contains (repoid, langid) VALUES (%d, %d);' %(repoid, langid))
-        except:
-            sqlconn.run('INSERT INTO language (name) VALUES ("%s");' %(repolang))
-            langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(repolang))[0][0]
-            sqlconn.run('INSERT INTO contains (repoid, langid) VALUES (%d, %d);' %(repoid, langid))
-        sqlconn.connection.commit()
-        sqlconn.connection.close()
+        # sqlconn = MySqlConn()
+        # repoid = sqlconn.run('SELECT id FROM repo WHERE reponame="%s";' %(reponame))[0][0]
+        # try:
+        #     langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(repolang))[0][0]
+        #     # sqlconn.run('INSERT INTO contains (repoid, langid) VALUES (%d, %d);' %(repoid, langid))
+        # except:
+        #     # sqlconn.run('INSERT INTO language (name) VALUES ("%s");' %(repolang))
+        #     langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(repolang))[0][0]
+        #     # sqlconn.run('INSERT INTO contains (repoid, langid) VALUES (%d, %d);' %(repoid, langid))
+        # sqlconn.connection.commit()
+        # sqlconn.connection.close()
 
 
 def devsLangsToMysql():
@@ -282,9 +285,9 @@ def devLangOneModeToGml():
 if __name__ == '__main__':
     # scrape()
     # devsToMysql()
-    # reposLangsToMysql()
+    reposLangsToMysql()
     # devsLangsToMysql()
     # repoLangToGml()
     # devLangToGml()
     # repoLangOneModeToGml()
-    devLangOneModeToGml()
+    # devLangOneModeToGml()
