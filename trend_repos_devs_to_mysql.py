@@ -97,24 +97,26 @@ def reposLangsToMysql():
         reponame = repo[0]
         # print(reponame)
         try:
-            repolang = getLanguagesFromRepos({0: {'full_name': reponame}})
-            print(repolang)
+            repolangs = getLanguagesFromRepos({0: {'full_name': reponame}})[0]['languages']
+            # print(repolangs)
         except Exception as e:
             print(e)
-            repolang = "B+NULL"
-        # print(repolang)
-        print(repolang)
-        # sqlconn = MySqlConn()
-        # repoid = sqlconn.run('SELECT id FROM repo WHERE reponame="%s";' %(reponame))[0][0]
-        # try:
-        #     langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(repolang))[0][0]
-        #     # sqlconn.run('INSERT INTO contains (repoid, langid) VALUES (%d, %d);' %(repoid, langid))
-        # except:
-        #     # sqlconn.run('INSERT INTO language (name) VALUES ("%s");' %(repolang))
-        #     langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(repolang))[0][0]
-        #     # sqlconn.run('INSERT INTO contains (repoid, langid) VALUES (%d, %d);' %(repoid, langid))
-        # sqlconn.connection.commit()
-        # sqlconn.connection.close()
+            repolangs = "B+NULL"
+        # print(repolangs)
+        print(repolangs)
+        sqlconn = MySqlConn()
+        repoid = sqlconn.run('SELECT id FROM repo WHERE reponame="%s";' %(reponame))[0][0]
+        for lang in repolangs.keys():
+            print(lang)
+            try:
+                    langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(lang))[0][0]
+                    sqlconn.run('INSERT INTO contains (repoid, langid) VALUES (%d, %d);' %(repoid, langid))
+            except:
+                    sqlconn.run('INSERT INTO language (name) VALUES ("%s");' %(lang))
+                    langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(lang))[0][0]
+                    sqlconn.run('INSERT INTO contains (repoid, langid) VALUES (%d, %d);' %(repoid, langid))
+        sqlconn.connection.commit()
+        sqlconn.connection.close()
 
 
 def devsLangsToMysql():
@@ -285,8 +287,8 @@ def devLangOneModeToGml():
 if __name__ == '__main__':
     # scrape()
     # devsToMysql()
-    reposLangsToMysql()
-    # devsLangsToMysql()
+    # reposLangsToMysql()
+    devsLangsToMysql()
     # repoLangToGml()
     # devLangToGml()
     # repoLangOneModeToGml()
