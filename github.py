@@ -9,6 +9,9 @@ def getRepos(username):
 
     topLang = {}
 
+    topLang_all = {}
+    
+
     #print(r)
 
     for i in range(len(r)):
@@ -16,10 +19,29 @@ def getRepos(username):
 
         urll = 'http://api.github.com/repos/' + r[i]['full_name'] + '/contributors?client_id=36a1e33eece028435910&client_secret=c3a3ac09badfdb95b9679a70567a919b94501c1e'
 
+
+        url_l = 'http://api.github.com/repos/' + r[i]['full_name'] + '/languages?client_id=36a1e33eece028435910&client_secret=6f5cac313d3f620b5a2d569e8a82a5fb6d1ec876'
+
         rr = requests.get(urll)
+        rr_l = requests.get(url_l)
         if (rr.status_code == 200):
             rr = rr.json()
-            temp = {'full_name': r[i]['full_name'], 'language':r[i]['language'], 'contributors' :  [user['login'] for user in rr]}
+            rr_l = rr_l.json()
+
+            topLang_exp = {}
+
+            for j in rr_l.keys():
+                if i in topLang_exp.keys():
+                    topLang_exp[j] += 1
+                else:
+                    topLang_exp[j] = 1
+
+                if i in topLang_all.keys():
+                    topLang_all[j] += rr_l[j]
+                else:
+                    topLang_all[j] = rr_l[j]
+
+            temp = {'full_name': r[i]['full_name'], 'language':r[i]['language'], 'contributors' :  [user['login'] for user in rr], 'langs' : topLang_exp}
             if r[i]['language'] in topLang.keys():
                 topLang[r[i]['language']] += 1
             else:
@@ -68,7 +90,7 @@ def getLanguagesFromRepos(repos, languages_search=[]):
     return resp
 
 # print([[i['full_name'], i['topLang']] for i in getLanguagesFromRepos(getRepos('brunoartc')['repos'])])
-# print(getRepos('chends888')['repos'])
+print(getRepos('chends888'))
 tmp = {0: {'full_name': 'chends888/AWSLambdaJobsHandler', 'language': 'Python', 'contributors': ['chends888']}}
 #print(getLanguagesFromRepos(tmp))
 
