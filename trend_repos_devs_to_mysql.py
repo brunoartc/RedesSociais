@@ -106,7 +106,9 @@ def reposLangsToMysql():
         print(repolangs)
         sqlconn = MySqlConn()
         repoid = sqlconn.run('SELECT id FROM repo WHERE reponame="%s";' %(reponame))[0][0]
+        sqlconn.connection.close()
         for lang in repolangs.keys():
+            sqlconn = MySqlConn()
             print(lang)
             try:
                     langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(lang))[0][0]
@@ -115,8 +117,8 @@ def reposLangsToMysql():
                     sqlconn.run('INSERT INTO language (name) VALUES ("%s");' %(lang))
                     langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(lang))[0][0]
                     sqlconn.run('INSERT INTO contains (repoid, langid) VALUES (%d, %d);' %(repoid, langid))
-        sqlconn.connection.commit()
-        sqlconn.connection.close()
+            sqlconn.connection.commit()
+            sqlconn.connection.close()
 
 
 def devsLangsToMysql():
@@ -128,28 +130,36 @@ def devsLangsToMysql():
     sqlconn.connection.close()
     for dev in devs:
         username = dev[0]
-        try:
-            devlang = getRepos(username)['topLang']
-            devlang = sorted(devlang.items(), key=lambda kv: kv[1])
-            devlang = devlang[-1][0]
-        except Exception as e:
-            print(e)
-            devlang = "B+NULL"
-        print(devlang)
         sqlconn = MySqlConn()
         devid = sqlconn.run('SELECT id FROM dev WHERE username="%s";' %(username))[0][0]
-        try:
-            langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(devlang))[0][0]
-            sqlconn.run('INSERT INTO uses (devid, langid) VALUES (%d, %d);' %(devid, langid))
-        except:
-            sqlconn.run('INSERT INTO language (name) VALUES ("%s");' %(devlang))
-            langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(devlang))[0][0]
-            sqlconn.run('INSERT INTO uses (devid, langid) VALUES (%d, %d);' %(devid, langid))
-        sqlconn.connection.commit()
         sqlconn.connection.close()
+        try:
+            devlangs = getRepos(username)['languages']
+            # devlangs = sorted(devlangs.items(), key=lambda kv: kv[1])
+            # devlangs = devlangs[-1][0]
+        except Exception as e:
+            print(e)
+            devlangs = {"B+NULL": None}
+        print(devlangs)
+        # sqlconn.connection.close()
+
+        for lang in devlangs.keys():
+            # print(devid, lang)
+            sqlconn = MySqlConn()
+            try:
+                langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(lang))[0][0]
+                print(devid, langid)
+                sqlconn.run('INSERT INTO uses (devid, langid) VALUES (%d, %d);' %(devid, langid))
+            except:
+                sqlconn.run('INSERT INTO language (name) VALUES ("%s");' %(lang))
+                langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(lang))[0][0]
+                print(devid, langid)
+                sqlconn.run('INSERT INTO uses (devid, langid) VALUES (%d, %d);' %(devid, langid))
+            sqlconn.connection.commit()
+            sqlconn.connection.close()
 
 def repoLangToGml():
-    tmp = 'graph [\n  directed 1\n'
+    tmp = 'graph [\n  directed 0\n'
     sqlconn = MySqlConn()
     langs = sqlconn.run('SELECT name FROM language;')
     langs_ids = []
