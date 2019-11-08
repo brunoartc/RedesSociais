@@ -197,7 +197,7 @@ def repoLangToGml():
 
 
 def devLangToGml():
-    tmp = 'graph [\n  directed 1\n'
+    tmp = 'graph [\n  directed 0\n'
     sqlconn = MySqlConn()
     langs = sqlconn.run('SELECT name FROM language;')
     # langs_ids = []
@@ -298,8 +298,8 @@ if __name__ == '__main__':
     # scrape()
     # devsToMysql()
     # reposLangsToMysql()
-    devsLangsToMysql()
+    # devsLangsToMysql()
     # repoLangToGml()
-    # devLangToGml()
+    devLangToGml()
     # repoLangOneModeToGml()
     # devLangOneModeToGml()
