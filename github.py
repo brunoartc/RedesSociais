@@ -7,7 +7,7 @@ def getRepos(username):
     url = 'https://api.github.com/users/' + username + '/repos'
 
 
-    headers = {'Authorization': 'token e4146d86fb322e59918b295b95ca6b1b61a2f031'}
+    headers = {'Authorization': 'token 96a382506c4e02c7a4eb90aeddc05b11dc419ec3'}
     r = requests.get(url, headers=headers).json()
 
     # username = 'chends888'
@@ -103,7 +103,7 @@ def getLanguagesFromRepos(repos, languages_search=[]):
     return resp
 
 # print([[i['full_name'], i['topLang']] for i in getLanguagesFromRepos(getRepos('brunoartc')['repos'])])
-# print(getRepos('chends888')['languages'])
+print(getRepos('chends888')['languages'])
 # tmp = {0: {'full_name': 'chends888/AWSLambdaJobsHandler', 'language': 'Python', 'contributors': ['chends888']}}
 #print(getLanguagesFromRepos(tmp))
 

@@ -1,7 +1,7 @@
 graph [
   directed 0
   node [
-    id "GLSL"
+    id "Jupyter Notebook"
   ]
   node [
     id "Python"
@@ -10,124 +10,109 @@ graph [
     id "JavaScript"
   ]
   node [
-    id "V"
-  ]
-  node [
-    id "Java"
-  ]
-  node [
-    id "Jupyter Notebook"
+    id "C++"
   ]
   node [
     id "Shell"
   ]
   node [
-    id "None"
-  ]
-  node [
-    id "C++"
-  ]
-  node [
-    id "PHP"
-  ]
-  node [
-    id "TypeScript"
-  ]
-  node [
-    id "C#"
-  ]
-  node [
-    id "Dart"
-  ]
-  node [
-    id "Rust"
-  ]
-  node [
-    id "Go"
-  ]
-  node [
-    id "Ruby"
-  ]
-  node [
-    id "PowerShell"
-  ]
-  node [
-    id "CSS"
-  ]
-  node [
-    id "C"
-  ]
-  node [
-    id "B+NULL"
-  ]
-  node [
-    id "Makefile"
+    id "MATLAB"
   ]
   node [
     id "HTML"
   ]
   node [
-    id "Swift"
+    id "Java"
+  ]
+  node [
+    id "CSS"
   ]
   node [
     id "Dockerfile"
   ]
   node [
-    id "D"
+    id "Go"
   ]
   node [
-    id "Nim"
+    id "Makefile"
   ]
   node [
-    id "TeX"
+    id "Smarty"
   ]
   node [
-    id "Groovy"
+    id "TypeScript"
   ]
   node [
-    id "R"
-  ]
-  node [
-    id "Arduino"
-  ]
-  node [
-    id "Objective-C"
-  ]
-  node [
-    id "Emacs Lisp"
-  ]
-  node [
-    id "Clojure"
-  ]
-  node [
-    id "Erlang"
-  ]
-  node [
-    id "Standard ML"
-  ]
-  node [
-    id "Haskell"
-  ]
-  node [
-    id "Lua"
-  ]
-  node [
-    id "Scheme"
-  ]
-  node [
-    id "HLSL"
+    id "Inno Setup"
   ]
   node [
     id "Batchfile"
   ]
   node [
-    id "MATLAB"
+    id "PowerShell"
+  ]
+  node [
+    id "Groovy"
+  ]
+  node [
+    id "Ruby"
+  ]
+  node [
+    id "Objective-C"
+  ]
+  node [
+    id "Objective-C++"
+  ]
+  node [
+    id "Clojure"
+  ]
+  node [
+    id "Perl 6"
+  ]
+  node [
+    id "PHP"
+  ]
+  node [
+    id "Visual Basic"
+  ]
+  node [
+    id "Perl"
+  ]
+  node [
+    id "C"
+  ]
+  node [
+    id "F#"
+  ]
+  node [
+    id "CoffeeScript"
+  ]
+  node [
+    id "Rust"
+  ]
+  node [
+    id "C#"
+  ]
+  node [
+    id "R"
   ]
   node [
     id "Roff"
   ]
   node [
-    id "Perl"
+    id "ShaderLab"
+  ]
+  node [
+    id "Swift"
+  ]
+  node [
+    id "Lua"
+  ]
+  node [
+    id "HLSL"
+  ]
+  node [
+    id "Hack"
   ]
   node [
     id "LLVM"
@@ -137,9 +122,6 @@ graph [
   ]
   node [
     id "CMake"
-  ]
-  node [
-    id "Objective-C++"
   ]
   node [
     id "Cuda"
@@ -152,6 +134,12 @@ graph [
   ]
   node [
     id "M4"
+  ]
+  node [
+    id "TeX"
+  ]
+  node [
+    id "Emacs Lisp"
   ]
   node [
     id "Smalltalk"
@@ -202,61 +190,67 @@ graph [
     id "Logos"
   ]
   node [
-    id "ASP"
-  ]
-  node [
-    id "ColdFusion"
-  ]
-  node [
-    id "Hack"
-  ]
-  node [
-    id "PureBasic"
-  ]
-  node [
-    id "Metal"
-  ]
-  node [
-    id "Yacc"
-  ]
-  node [
-    id "Kotlin"
+    id "V"
   ]
   node [
     id "Vue"
   ]
   node [
-    id "Boo"
-  ]
-  node [
-    id "Tcl"
+    id "PLpgSQL"
   ]
   node [
     id "TSQL"
   ]
   node [
-    id "FreeMarker"
+    id "ASP"
   ]
   node [
-    id "B"
+    id "XSLT"
   ]
   node [
-    id "+"
+    id "Kotlin"
   ]
   node [
-    id "N"
+    id "Prolog"
   ]
   node [
-    id "U"
+    id "B+NULL"
   ]
   node [
-    id "L"
+    id "Dart"
   ]
   node [
-    id "Processing"
+    id "Protocol Buffer"
   ]
   node [
-    id "DM"
+    id "Tcl"
+  ]
+  node [
+    id "DIGITAL Command Language"
+  ]
+  node [
+    id "SQLPL"
+  ]
+  node [
+    id "GLSL"
+  ]
+  node [
+    id "OpenEdge ABL"
+  ]
+  node [
+    id "Metal"
+  ]
+  node [
+    id "PostScript"
+  ]
+  node [
+    id "HCL"
+  ]
+  node [
+    id "XML"
+  ]
+  node [
+    id "ANTLR"
   ]
   node [
     id "Thrift"
@@ -268,649 +262,127 @@ graph [
     id "Scala"
   ]
   node [
-    id "Groff"
+    id "D"
+  ]
+  node [
+    id "Haskell"
   ]
   node [
     id "IDL"
   ]
   node [
-    id "Julia"
-  ]
-  node [
-    id "Dogescript"
-  ]
-  node [
-    id "CoffeeScript"
-  ]
-  node [
-    id "Terra"
-  ]
-  node [
-    id "ShaderLab"
-  ]
-  node [
-    id "Verilog"
-  ]
-  node [
-    id "eC"
-  ]
-  node [
-    id "DIGITAL Command Language"
-  ]
-  node [
-    id "Module Management System"
-  ]
-  node [
-    id "OpenSCAD"
-  ]
-  node [
-    id "Brainfuck"
-  ]
-  node [
-    id "Elixir"
-  ]
-  node [
-    id "LOLCODE"
-  ]
-  node [
-    id "F#"
-  ]
-  node [
-    id "Visual Basic"
-  ]
-  node [
-    id "Ada"
-  ]
-  node [
-    id "Elm"
-  ]
-  node [
-    id "Prolog"
-  ]
-  node [
-    id "Haxe"
-  ]
-  node [
-    id "Perl 6"
-  ]
-  node [
-    id "COBOL"
-  ]
-  node [
-    id "Crystal"
-  ]
-  node [
-    id "JSONiq"
-  ]
-  node [
-    id "Gnuplot"
-  ]
-  node [
-    id "AutoHotkey"
-  ]
-  node [
-    id "AutoIt"
-  ]
-  node [
-    id "NSIS"
-  ]
-  node [
-    id "Mako"
-  ]
-  node [
-    id "WebAssembly"
-  ]
-  node [
-    id "QML"
-  ]
-  node [
-    id "VHDL"
-  ]
-  node [
-    id "E"
-  ]
-  node [
-    id "SQLPL"
-  ]
-  node [
-    id "Chapel"
-  ]
-  node [
-    id "Bro"
-  ]
-  node [
-    id "Idris"
-  ]
-  node [
-    id "Racket"
-  ]
-  node [
-    id "SQF"
-  ]
-  node [
-    id "HCL"
-  ]
-  node [
-    id "Red"
-  ]
-  node [
-    id "ANTLR"
-  ]
-  node [
-    id "PostScript"
-  ]
-  node [
-    id "NewLisp"
-  ]
-  node [
-    id "q"
-  ]
-  node [
-    id "Io"
-  ]
-  node [
-    id "J"
-  ]
-  node [
-    id "QMake"
-  ]
-  node [
-    id "Protocol Buffer"
-  ]
-  node [
-    id "ChucK"
-  ]
-  node [
-    id "PureScript"
-  ]
-  node [
-    id "Ballerina"
-  ]
-  node [
-    id "UnrealScript"
-  ]
-  node [
-    id "Apex"
-  ]
-  node [
-    id "REXX"
-  ]
-  node [
-    id "XQuery"
-  ]
-  node [
-    id "PLSQL"
-  ]
-  node [
-    id "Zephir"
-  ]
-  node [
-    id "SAS"
-  ]
-  node [
-    id "Zimpl"
-  ]
-  node [
-    id "Rebol"
-  ]
-  node [
-    id "Handlebars"
-  ]
-  node [
-    id "Puppet"
-  ]
-  node [
-    id "ApacheConf"
+    id "Yacc"
   ]
   node [
     id "Nginx"
   ]
   node [
-    id "XSLT"
-  ]
-  node [
-    id "SourcePawn"
-  ]
-  node [
-    id "RPC"
-  ]
-  node [
-    id "GDScript"
-  ]
-  node [
-    id "KiCad Layout"
-  ]
-  node [
-    id "Eagle"
-  ]
-  node [
-    id "XS"
-  ]
-  node [
-    id "GDB"
-  ]
-  node [
-    id "YARA"
-  ]
-  node [
-    id "Smarty"
-  ]
-  node [
-    id "Cap'n Proto"
-  ]
-  node [
-    id "Objective-J"
-  ]
-  node [
-    id "Jasmin"
-  ]
-  node [
-    id "Nix"
-  ]
-  node [
-    id "sed"
-  ]
-  node [
-    id "UrWeb"
-  ]
-  node [
-    id "Gherkin"
-  ]
-  node [
-    id "Game Maker Language"
-  ]
-  node [
-    id "Coq"
-  ]
-  node [
-    id "Liquid"
-  ]
-  node [
-    id "AMPL"
-  ]
-  node [
-    id "Nemerle"
-  ]
-  node [
-    id "Component Pascal"
-  ]
-  node [
-    id "POV-Ray SDL"
-  ]
-  node [
-    id "Slash"
-  ]
-  node [
-    id "Scilab"
-  ]
-  node [
-    id "Meson"
-  ]
-  node [
-    id "Stata"
-  ]
-  node [
-    id "SystemVerilog"
-  ]
-  node [
-    id "OpenEdge ABL"
-  ]
-  node [
-    id "Common Workflow Language"
-  ]
-  node [
-    id "Ragel"
-  ]
-  node [
-    id "XML"
-  ]
-  node [
-    id "Vala"
-  ]
-  node [
-    id "Volt"
-  ]
-  node [
-    id "FLUX"
-  ]
-  node [
-    id "Rich Text Format"
-  ]
-  node [
-    id "ooc"
-  ]
-  node [
-    id "BitBake"
-  ]
-  node [
-    id "GCC Machine Description"
-  ]
-  node [
-    id "Parrot"
-  ]
-  node [
-    id "PLpgSQL"
-  ]
-  node [
-    id "Nu"
-  ]
-  node [
-    id "RobotFramework"
-  ]
-  node [
-    id "Eiffel"
-  ]
-  node [
-    id "BlitzBasic"
-  ]
-  node [
-    id "AngelScript"
-  ]
-  node [
-    id "AGS Script"
-  ]
-  node [
-    id "MLIR"
-  ]
-  node [
-    id "GAP"
-  ]
-  node [
-    id "MoonScript"
-  ]
-  node [
-    id "PigLatin"
-  ]
-  node [
-    id "Inno Setup"
-  ]
-  node [
-    id "Limbo"
-  ]
-  node [
-    id "Clarion"
-  ]
-  node [
-    id "Graphviz (DOT)"
-  ]
-  node [
-    id "CLIPS"
-  ]
-  node [
-    id "MAXScript"
-  ]
-  node [
-    id "RAML"
-  ]
-  node [
-    id "Bison"
-  ]
-  node [
-    id "Jsonnet"
+    id "COBOL"
   ]
   node [
     id "SaltStack"
   ]
   node [
-    id "Genshi"
+    id "Crystal"
   ]
   node [
-    id "EmberScript"
+    id "PLSQL"
   ]
   node [
-    id "VCL"
+    id "Puppet"
   ]
   node [
-    id "Augeas"
+    id "GAP"
   ]
   node [
-    id "API Blueprint"
+    id "Gherkin"
   ]
   node [
-    id "Squirrel"
+    id "Boo"
   ]
   node [
-    id "Arc"
+    id "Gnuplot"
   ]
   node [
-    id "Modelica"
-  ]
-  node [
-    id "ActionScript"
-  ]
-  node [
-    id "Lasso"
-  ]
-  node [
-    id "HiveQL"
-  ]
-  node [
-    id "Solidity"
-  ]
-  node [
-    id "Mirah"
-  ]
-  node [
-    id "LiveScript"
-  ]
-  node [
-    id "SMT"
-  ]
-  node [
-    id "Pike"
-  ]
-  node [
-    id "Hy"
-  ]
-  node [
-    id "Lean"
-  ]
-  node [
-    id "SQL"
-  ]
-  node [
-    id "Clean"
-  ]
-  node [
-    id "Diff"
-  ]
-  node [
-    id "Agda"
-  ]
-  node [
-    id "JFlex"
-  ]
-  node [
-    id "Gettext Catalog"
-  ]
-  node [
-    id "AspectJ"
-  ]
-  node [
-    id "Alloy"
+    id "Erlang"
   ]
   node [
     id "1C Enterprise"
   ]
   node [
-    id "ABAP"
-  ]
-  node [
-    id "Mask"
-  ]
-  node [
-    id "TLA"
-  ]
-  node [
-    id "Smali"
-  ]
-  node [
-    id "bloc97/Anime4K"
-  ]
-  node [
-    id "evilsocket/pwnagotchi"
-  ]
-  node [
-    id "iptv-org/iptv"
-  ]
-  node [
-    id "vlang/v"
-  ]
-  node [
     id "google-research/google-research"
+  ]
+  node [
+    id "openai/gpt-2"
   ]
   node [
     id "TheAlgorithms/Java"
   ]
   node [
-    id "ageron/handson-ml2"
+    id "dapr/dapr"
   ]
   node [
-    id "robbyrussell/oh-my-zsh"
-  ]
-  node [
-    id "home-assistant/home-assistant"
-  ]
-  node [
-    id "0voice/interview_internal_reference"
-  ]
-  node [
-    id "ossu/computer-science"
+    id "microsoft/vscode"
   ]
   node [
     id "llvm/llvm-project"
   ]
   node [
-    id "danielmiessler/SecLists"
+    id "vlang/v"
   ]
   node [
-    id "pytorch/pytorch"
+    id "evilsocket/pwnagotchi"
   ]
   node [
-    id "storybookjs/storybook"
+    id "2227324689/gpmall"
   ]
   node [
-    id "geekcomputers/Python"
+    id "robbyrussell/oh-my-zsh"
   ]
   node [
-    id "jackfrued/Python-100-Days"
+    id "gzc426/Java-Interview"
   ]
   node [
-    id "macrozheng/mall"
+    id "frank-lam/fullstack-tutorial"
   ]
   node [
-    id "vuejs/vue"
+    id "ageron/handson-ml2"
   ]
   node [
-    id "2dust/v2rayN"
+    id "streamlit/streamlit"
   ]
   node [
-    id "elunez/eladmin"
+    id "GoogleChrome/puppeteer"
   ]
   node [
-    id "iGhibli/iOS-DeviceSupport"
+    id "fengdu78/lihang-code"
   ]
   node [
-    id "ShusenTang/Dive-into-DL-PyTorch"
+    id "hankcs/HanLP"
   ]
   node [
-    id "mitesh77/Best-Flutter-UI-Templates"
+    id "swisskyrepo/PayloadsAllTheThings"
   ]
-  edge [
-    source "bloc97/Anime4K"
-    target "GLSL"
+  node [
+    id "mrdoob/three.js"
   ]
-  edge [
-    source "bloc97/Anime4K"
-    target "JavaScript"
+  node [
+    id "apache/incubator-echarts"
   ]
-  edge [
-    source "bloc97/Anime4K"
-    target "Java"
+  node [
+    id "cdr/code-server"
   ]
-  edge [
-    source "bloc97/Anime4K"
-    target "Shell"
+  node [
+    id "topjohnwu/Magisk"
   ]
-  edge [
-    source "bloc97/Anime4K"
-    target "CSS"
+  node [
+    id "unknwon/the-way-to-go_ZH_CN"
   ]
-  edge [
-    source "bloc97/Anime4K"
-    target "HTML"
+  node [
+    id "30-seconds/30-seconds-of-code"
   ]
-  edge [
-    source "bloc97/Anime4K"
-    target "HLSL"
-  ]
-  edge [
-    source "bloc97/Anime4K"
-    target "Batchfile"
-  ]
-  edge [
-    source "evilsocket/pwnagotchi"
-    target "Python"
-  ]
-  edge [
-    source "evilsocket/pwnagotchi"
-    target "JavaScript"
-  ]
-  edge [
-    source "evilsocket/pwnagotchi"
-    target "Shell"
-  ]
-  edge [
-    source "evilsocket/pwnagotchi"
-    target "PowerShell"
-  ]
-  edge [
-    source "evilsocket/pwnagotchi"
-    target "CSS"
-  ]
-  edge [
-    source "evilsocket/pwnagotchi"
-    target "Makefile"
-  ]
-  edge [
-    source "evilsocket/pwnagotchi"
-    target "HTML"
-  ]
-  edge [
-    source "iptv-org/iptv"
-    target "JavaScript"
-  ]
-  edge [
-    source "vlang/v"
-    target "V"
-  ]
-  edge [
-    source "vlang/v"
-    target "C"
-  ]
-  edge [
-    source "vlang/v"
-    target "Makefile"
-  ]
-  edge [
-    source "vlang/v"
-    target "Dockerfile"
-  ]
-  edge [
-    source "vlang/v"
-    target "Batchfile"
-  ]
-  edge [
-    source "google-research/google-research"
-    target "Python"
-  ]
-  edge [
-    source "google-research/google-research"
-    target "JavaScript"
-  ]
-  edge [
-    source "google-research/google-research"
-    target "Java"
+  node [
+    id "home-assistant/home-assistant"
   ]
   edge [
     source "google-research/google-research"
@@ -918,7 +390,11 @@ graph [
   ]
   edge [
     source "google-research/google-research"
-    target "Shell"
+    target "Python"
+  ]
+  edge [
+    source "google-research/google-research"
+    target "JavaScript"
   ]
   edge [
     source "google-research/google-research"
@@ -926,79 +402,199 @@ graph [
   ]
   edge [
     source "google-research/google-research"
-    target "CSS"
-  ]
-  edge [
-    source "google-research/google-research"
-    target "HTML"
-  ]
-  edge [
-    source "google-research/google-research"
-    target "Dockerfile"
+    target "Shell"
   ]
   edge [
     source "google-research/google-research"
     target "MATLAB"
   ]
   edge [
+    source "google-research/google-research"
+    target "HTML"
+  ]
+  edge [
+    source "google-research/google-research"
+    target "Java"
+  ]
+  edge [
+    source "google-research/google-research"
+    target "CSS"
+  ]
+  edge [
+    source "google-research/google-research"
+    target "Dockerfile"
+  ]
+  edge [
+    source "openai/gpt-2"
+    target "Python"
+  ]
+  edge [
     source "TheAlgorithms/Java"
     target "Java"
   ]
   edge [
-    source "ageron/handson-ml2"
+    source "dapr/dapr"
     target "Python"
   ]
   edge [
-    source "ageron/handson-ml2"
-    target "Jupyter Notebook"
-  ]
-  edge [
-    source "ageron/handson-ml2"
+    source "dapr/dapr"
     target "Shell"
   ]
   edge [
-    source "ageron/handson-ml2"
-    target "Makefile"
-  ]
-  edge [
-    source "ageron/handson-ml2"
+    source "dapr/dapr"
     target "Dockerfile"
   ]
   edge [
-    source "robbyrussell/oh-my-zsh"
-    target "Python"
+    source "dapr/dapr"
+    target "Go"
   ]
   edge [
-    source "robbyrussell/oh-my-zsh"
-    target "Shell"
-  ]
-  edge [
-    source "robbyrussell/oh-my-zsh"
-    target "Ruby"
-  ]
-  edge [
-    source "robbyrussell/oh-my-zsh"
+    source "dapr/dapr"
     target "Makefile"
   ]
   edge [
-    source "robbyrussell/oh-my-zsh"
-    target "Roff"
+    source "dapr/dapr"
+    target "Smarty"
   ]
   edge [
-    source "robbyrussell/oh-my-zsh"
-    target "Perl"
-  ]
-  edge [
-    source "home-assistant/home-assistant"
+    source "microsoft/vscode"
     target "Python"
   ]
   edge [
-    source "home-assistant/home-assistant"
+    source "microsoft/vscode"
+    target "JavaScript"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "C++"
+  ]
+  edge [
+    source "microsoft/vscode"
     target "Shell"
   ]
   edge [
-    source "0voice/interview_internal_reference"
-    target "Python"
+    source "microsoft/vscode"
+    target "HTML"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Java"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "CSS"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Dockerfile"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Go"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Makefile"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "TypeScript"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Inno Setup"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Batchfile"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "PowerShell"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Groovy"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Ruby"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Objective-C"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Objective-C++"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Clojure"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Perl 6"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "PHP"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Visual Basic"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Perl"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "C"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "F#"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "CoffeeScript"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Rust"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "C#"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "R"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Roff"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "ShaderLab"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Swift"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Lua"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "HLSL"
+  ]
+  edge [
+    source "microsoft/vscode"
+    target "Hack"
   ]
   edge [
     source "llvm/llvm-project"
@@ -1010,23 +606,27 @@ graph [
   ]
   edge [
     source "llvm/llvm-project"
-    target "Shell"
-  ]
-  edge [
-    source "llvm/llvm-project"
     target "C++"
   ]
   edge [
     source "llvm/llvm-project"
-    target "PHP"
+    target "Shell"
   ]
   edge [
     source "llvm/llvm-project"
-    target "C#"
+    target "MATLAB"
   ]
   edge [
     source "llvm/llvm-project"
-    target "Rust"
+    target "HTML"
+  ]
+  edge [
+    source "llvm/llvm-project"
+    target "CSS"
+  ]
+  edge [
+    source "llvm/llvm-project"
+    target "Dockerfile"
   ]
   edge [
     source "llvm/llvm-project"
@@ -1034,43 +634,7 @@ graph [
   ]
   edge [
     source "llvm/llvm-project"
-    target "CSS"
-  ]
-  edge [
-    source "llvm/llvm-project"
-    target "C"
-  ]
-  edge [
-    source "llvm/llvm-project"
     target "Makefile"
-  ]
-  edge [
-    source "llvm/llvm-project"
-    target "HTML"
-  ]
-  edge [
-    source "llvm/llvm-project"
-    target "Swift"
-  ]
-  edge [
-    source "llvm/llvm-project"
-    target "Dockerfile"
-  ]
-  edge [
-    source "llvm/llvm-project"
-    target "TeX"
-  ]
-  edge [
-    source "llvm/llvm-project"
-    target "R"
-  ]
-  edge [
-    source "llvm/llvm-project"
-    target "Objective-C"
-  ]
-  edge [
-    source "llvm/llvm-project"
-    target "Emacs Lisp"
   ]
   edge [
     source "llvm/llvm-project"
@@ -1078,7 +642,35 @@ graph [
   ]
   edge [
     source "llvm/llvm-project"
-    target "MATLAB"
+    target "Objective-C"
+  ]
+  edge [
+    source "llvm/llvm-project"
+    target "Objective-C++"
+  ]
+  edge [
+    source "llvm/llvm-project"
+    target "PHP"
+  ]
+  edge [
+    source "llvm/llvm-project"
+    target "Perl"
+  ]
+  edge [
+    source "llvm/llvm-project"
+    target "C"
+  ]
+  edge [
+    source "llvm/llvm-project"
+    target "Rust"
+  ]
+  edge [
+    source "llvm/llvm-project"
+    target "C#"
+  ]
+  edge [
+    source "llvm/llvm-project"
+    target "R"
   ]
   edge [
     source "llvm/llvm-project"
@@ -1086,7 +678,7 @@ graph [
   ]
   edge [
     source "llvm/llvm-project"
-    target "Perl"
+    target "Swift"
   ]
   edge [
     source "llvm/llvm-project"
@@ -1099,10 +691,6 @@ graph [
   edge [
     source "llvm/llvm-project"
     target "CMake"
-  ]
-  edge [
-    source "llvm/llvm-project"
-    target "Objective-C++"
   ]
   edge [
     source "llvm/llvm-project"
@@ -1119,6 +707,14 @@ graph [
   edge [
     source "llvm/llvm-project"
     target "M4"
+  ]
+  edge [
+    source "llvm/llvm-project"
+    target "TeX"
+  ]
+  edge [
+    source "llvm/llvm-project"
+    target "Emacs Lisp"
   ]
   edge [
     source "llvm/llvm-project"
@@ -1185,295 +781,367 @@ graph [
     target "Logos"
   ]
   edge [
-    source "danielmiessler/SecLists"
-    target "Python"
-  ]
-  edge [
-    source "danielmiessler/SecLists"
-    target "Java"
-  ]
-  edge [
-    source "danielmiessler/SecLists"
-    target "Shell"
-  ]
-  edge [
-    source "danielmiessler/SecLists"
-    target "PHP"
-  ]
-  edge [
-    source "danielmiessler/SecLists"
+    source "vlang/v"
     target "HTML"
   ]
   edge [
-    source "danielmiessler/SecLists"
-    target "Perl"
-  ]
-  edge [
-    source "danielmiessler/SecLists"
-    target "ASP"
-  ]
-  edge [
-    source "danielmiessler/SecLists"
-    target "ColdFusion"
-  ]
-  edge [
-    source "danielmiessler/SecLists"
-    target "Hack"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "Python"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "Java"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "Shell"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "C++"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "Ruby"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "PowerShell"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "CSS"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "C"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "Makefile"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "HTML"
-  ]
-  edge [
-    source "pytorch/pytorch"
+    source "vlang/v"
     target "Dockerfile"
   ]
   edge [
-    source "pytorch/pytorch"
-    target "Objective-C"
+    source "vlang/v"
+    target "Makefile"
   ]
   edge [
-    source "pytorch/pytorch"
-    target "Lua"
-  ]
-  edge [
-    source "pytorch/pytorch"
+    source "vlang/v"
     target "Batchfile"
   ]
   edge [
-    source "pytorch/pytorch"
-    target "LLVM"
+    source "vlang/v"
+    target "C"
   ]
   edge [
-    source "pytorch/pytorch"
+    source "vlang/v"
     target "Assembly"
   ]
   edge [
-    source "pytorch/pytorch"
-    target "CMake"
+    source "vlang/v"
+    target "V"
   ]
   edge [
-    source "pytorch/pytorch"
-    target "Objective-C++"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "Cuda"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "Vim script"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "PureBasic"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "Metal"
-  ]
-  edge [
-    source "pytorch/pytorch"
-    target "Yacc"
-  ]
-  edge [
-    source "storybookjs/storybook"
+    source "evilsocket/pwnagotchi"
     target "Python"
   ]
   edge [
-    source "storybookjs/storybook"
+    source "evilsocket/pwnagotchi"
     target "JavaScript"
   ]
   edge [
-    source "storybookjs/storybook"
-    target "Java"
-  ]
-  edge [
-    source "storybookjs/storybook"
+    source "evilsocket/pwnagotchi"
     target "Shell"
   ]
   edge [
-    source "storybookjs/storybook"
-    target "TypeScript"
-  ]
-  edge [
-    source "storybookjs/storybook"
-    target "CSS"
-  ]
-  edge [
-    source "storybookjs/storybook"
+    source "evilsocket/pwnagotchi"
     target "HTML"
   ]
   edge [
-    source "storybookjs/storybook"
-    target "Objective-C"
+    source "evilsocket/pwnagotchi"
+    target "CSS"
   ]
   edge [
-    source "storybookjs/storybook"
-    target "Kotlin"
+    source "evilsocket/pwnagotchi"
+    target "Makefile"
   ]
   edge [
-    source "storybookjs/storybook"
+    source "evilsocket/pwnagotchi"
+    target "PowerShell"
+  ]
+  edge [
+    source "2227324689/gpmall"
+    target "JavaScript"
+  ]
+  edge [
+    source "2227324689/gpmall"
+    target "HTML"
+  ]
+  edge [
+    source "2227324689/gpmall"
+    target "Java"
+  ]
+  edge [
+    source "2227324689/gpmall"
+    target "CSS"
+  ]
+  edge [
+    source "2227324689/gpmall"
     target "Vue"
   ]
   edge [
-    source "storybookjs/storybook"
-    target "Boo"
+    source "2227324689/gpmall"
+    target "PLpgSQL"
   ]
   edge [
-    source "geekcomputers/Python"
-    target "Python"
-  ]
-  edge [
-    source "geekcomputers/Python"
-    target "Java"
-  ]
-  edge [
-    source "geekcomputers/Python"
-    target "Jupyter Notebook"
-  ]
-  edge [
-    source "geekcomputers/Python"
-    target "Tcl"
-  ]
-  edge [
-    source "jackfrued/Python-100-Days"
-    target "Python"
-  ]
-  edge [
-    source "jackfrued/Python-100-Days"
-    target "JavaScript"
-  ]
-  edge [
-    source "jackfrued/Python-100-Days"
-    target "Java"
-  ]
-  edge [
-    source "jackfrued/Python-100-Days"
-    target "Jupyter Notebook"
-  ]
-  edge [
-    source "jackfrued/Python-100-Days"
-    target "CSS"
-  ]
-  edge [
-    source "jackfrued/Python-100-Days"
-    target "HTML"
-  ]
-  edge [
-    source "jackfrued/Python-100-Days"
+    source "2227324689/gpmall"
     target "TSQL"
   ]
   edge [
-    source "macrozheng/mall"
-    target "Java"
+    source "robbyrussell/oh-my-zsh"
+    target "Python"
   ]
   edge [
-    source "macrozheng/mall"
-    target "TSQL"
-  ]
-  edge [
-    source "vuejs/vue"
-    target "JavaScript"
-  ]
-  edge [
-    source "vuejs/vue"
+    source "robbyrussell/oh-my-zsh"
     target "Shell"
   ]
   edge [
-    source "vuejs/vue"
-    target "TypeScript"
+    source "robbyrussell/oh-my-zsh"
+    target "Makefile"
   ]
   edge [
-    source "vuejs/vue"
-    target "CSS"
+    source "robbyrussell/oh-my-zsh"
+    target "Ruby"
   ]
   edge [
-    source "vuejs/vue"
-    target "HTML"
+    source "robbyrussell/oh-my-zsh"
+    target "Perl"
   ]
   edge [
-    source "vuejs/vue"
-    target "Vue"
+    source "robbyrussell/oh-my-zsh"
+    target "Roff"
   ]
   edge [
-    source "2dust/v2rayN"
-    target "C#"
+    source "frank-lam/fullstack-tutorial"
+    target "Shell"
   ]
   edge [
-    source "elunez/eladmin"
+    source "frank-lam/fullstack-tutorial"
     target "Java"
   ]
   edge [
-    source "elunez/eladmin"
-    target "TSQL"
-  ]
-  edge [
-    source "elunez/eladmin"
-    target "FreeMarker"
-  ]
-  edge [
-    source "iGhibli/iOS-DeviceSupport"
-    target "Python"
-  ]
-  edge [
-    source "ShusenTang/Dive-into-DL-PyTorch"
-    target "Python"
-  ]
-  edge [
-    source "ShusenTang/Dive-into-DL-PyTorch"
+    source "ageron/handson-ml2"
     target "Jupyter Notebook"
   ]
   edge [
-    source "mitesh77/Best-Flutter-UI-Templates"
-    target "Dart"
+    source "ageron/handson-ml2"
+    target "Python"
   ]
   edge [
-    source "mitesh77/Best-Flutter-UI-Templates"
-    target "Swift"
+    source "ageron/handson-ml2"
+    target "Shell"
   ]
   edge [
-    source "mitesh77/Best-Flutter-UI-Templates"
-    target "Objective-C"
+    source "ageron/handson-ml2"
+    target "Dockerfile"
   ]
   edge [
-    source "mitesh77/Best-Flutter-UI-Templates"
+    source "ageron/handson-ml2"
+    target "Makefile"
+  ]
+  edge [
+    source "streamlit/streamlit"
+    target "Python"
+  ]
+  edge [
+    source "streamlit/streamlit"
+    target "JavaScript"
+  ]
+  edge [
+    source "streamlit/streamlit"
+    target "Shell"
+  ]
+  edge [
+    source "streamlit/streamlit"
+    target "HTML"
+  ]
+  edge [
+    source "streamlit/streamlit"
+    target "CSS"
+  ]
+  edge [
+    source "streamlit/streamlit"
+    target "Dockerfile"
+  ]
+  edge [
+    source "streamlit/streamlit"
+    target "Makefile"
+  ]
+  edge [
+    source "streamlit/streamlit"
+    target "TypeScript"
+  ]
+  edge [
+    source "streamlit/streamlit"
+    target "Batchfile"
+  ]
+  edge [
+    source "GoogleChrome/puppeteer"
+    target "JavaScript"
+  ]
+  edge [
+    source "GoogleChrome/puppeteer"
+    target "HTML"
+  ]
+  edge [
+    source "GoogleChrome/puppeteer"
+    target "CSS"
+  ]
+  edge [
+    source "GoogleChrome/puppeteer"
+    target "TypeScript"
+  ]
+  edge [
+    source "fengdu78/lihang-code"
+    target "Jupyter Notebook"
+  ]
+  edge [
+    source "hankcs/HanLP"
+    target "Java"
+  ]
+  edge [
+    source "swisskyrepo/PayloadsAllTheThings"
+    target "Jupyter Notebook"
+  ]
+  edge [
+    source "swisskyrepo/PayloadsAllTheThings"
+    target "Python"
+  ]
+  edge [
+    source "swisskyrepo/PayloadsAllTheThings"
+    target "JavaScript"
+  ]
+  edge [
+    source "swisskyrepo/PayloadsAllTheThings"
+    target "Shell"
+  ]
+  edge [
+    source "swisskyrepo/PayloadsAllTheThings"
+    target "HTML"
+  ]
+  edge [
+    source "swisskyrepo/PayloadsAllTheThings"
+    target "Ruby"
+  ]
+  edge [
+    source "swisskyrepo/PayloadsAllTheThings"
+    target "PHP"
+  ]
+  edge [
+    source "swisskyrepo/PayloadsAllTheThings"
+    target "ASP"
+  ]
+  edge [
+    source "swisskyrepo/PayloadsAllTheThings"
+    target "XSLT"
+  ]
+  edge [
+    source "mrdoob/three.js"
+    target "JavaScript"
+  ]
+  edge [
+    source "mrdoob/three.js"
+    target "HTML"
+  ]
+  edge [
+    source "mrdoob/three.js"
+    target "CSS"
+  ]
+  edge [
+    source "apache/incubator-echarts"
+    target "JavaScript"
+  ]
+  edge [
+    source "apache/incubator-echarts"
+    target "HTML"
+  ]
+  edge [
+    source "apache/incubator-echarts"
+    target "CSS"
+  ]
+  edge [
+    source "cdr/code-server"
+    target "JavaScript"
+  ]
+  edge [
+    source "cdr/code-server"
+    target "Shell"
+  ]
+  edge [
+    source "cdr/code-server"
+    target "HTML"
+  ]
+  edge [
+    source "cdr/code-server"
+    target "CSS"
+  ]
+  edge [
+    source "cdr/code-server"
+    target "Dockerfile"
+  ]
+  edge [
+    source "cdr/code-server"
+    target "TypeScript"
+  ]
+  edge [
+    source "topjohnwu/Magisk"
+    target "Python"
+  ]
+  edge [
+    source "topjohnwu/Magisk"
+    target "C++"
+  ]
+  edge [
+    source "topjohnwu/Magisk"
+    target "Shell"
+  ]
+  edge [
+    source "topjohnwu/Magisk"
+    target "Java"
+  ]
+  edge [
+    source "topjohnwu/Magisk"
+    target "Makefile"
+  ]
+  edge [
+    source "topjohnwu/Magisk"
+    target "C"
+  ]
+  edge [
+    source "topjohnwu/Magisk"
     target "Kotlin"
+  ]
+  edge [
+    source "topjohnwu/Magisk"
+    target "Prolog"
+  ]
+  edge [
+    source "unknwon/the-way-to-go_ZH_CN"
+    target "JavaScript"
+  ]
+  edge [
+    source "unknwon/the-way-to-go_ZH_CN"
+    target "Shell"
+  ]
+  edge [
+    source "unknwon/the-way-to-go_ZH_CN"
+    target "HTML"
+  ]
+  edge [
+    source "unknwon/the-way-to-go_ZH_CN"
+    target "CSS"
+  ]
+  edge [
+    source "unknwon/the-way-to-go_ZH_CN"
+    target "Go"
+  ]
+  edge [
+    source "unknwon/the-way-to-go_ZH_CN"
+    target "Makefile"
+  ]
+  edge [
+    source "unknwon/the-way-to-go_ZH_CN"
+    target "Batchfile"
+  ]
+  edge [
+    source "30-seconds/30-seconds-of-code"
+    target "JavaScript"
+  ]
+  edge [
+    source "30-seconds/30-seconds-of-code"
+    target "Shell"
+  ]
+  edge [
+    source "30-seconds/30-seconds-of-code"
+    target "CSS"
+  ]
+  edge [
+    source "30-seconds/30-seconds-of-code"
+    target "Ruby"
+  ]
+  edge [
+    source "home-assistant/home-assistant"
+    target "Python"
+  ]
+  edge [
+    source "home-assistant/home-assistant"
+    target "Shell"
   ]
 ]
