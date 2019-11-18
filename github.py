@@ -7,7 +7,7 @@ def getRepos(username):
     url = 'https://api.github.com/users/' + username + '/repos'
 
 
-    headers = {'Authorization': 'token 96a382506c4e02c7a4eb90aeddc05b11dc419ec3'}
+    headers = {'Authorization': 'token d6c28f26308f39c533a4399962cbd1e07a048fdc'}
     r = requests.get(url, headers=headers).json()
 
     # username = 'chends888'
@@ -23,7 +23,7 @@ def getRepos(username):
     topLang_all = {}
     
 
-    #print(r)
+    print(r)
 
     for i in range(len(r)):
         #http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator} ???
@@ -103,7 +103,7 @@ def getLanguagesFromRepos(repos, languages_search=[]):
     return resp
 
 # print([[i['full_name'], i['topLang']] for i in getLanguagesFromRepos(getRepos('brunoartc')['repos'])])
-print(getRepos('chends888')['languages'])
+# print(getRepos('chends888')['languages'])
 # tmp = {0: {'full_name': 'chends888/AWSLambdaJobsHandler', 'language': 'Python', 'contributors': ['chends888']}}
 #print(getLanguagesFromRepos(tmp))
 

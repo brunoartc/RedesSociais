@@ -18,6 +18,16 @@ CREATE TABLE language (
     name VARCHAR(100) NOT NULL
 );
 
+CREATE TABLE repolanguage (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE devlanguage (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
 CREATE TABLE contains (
     repoid INT NOT NULL,
     langid INT NOT NULL,
@@ -27,7 +37,7 @@ CREATE TABLE contains (
         ON DELETE CASCADE
         ON UPDATE CASCADE,
     FOREIGN KEY (langid)
-        REFERENCES language (id)
+        REFERENCES repolanguage (id)
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
@@ -41,7 +51,8 @@ CREATE TABLE uses (
         ON DELETE CASCADE
         ON UPDATE CASCADE,
     FOREIGN KEY (langid)
-        REFERENCES language (id)
+        REFERENCES devlanguage (id)
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
+
