@@ -2,60 +2,77 @@ graph [
   directed 0
   node [
     id "Jupyter Notebook"
+    year 2015
   ]
   node [
     id "Python"
+    year 1990
   ]
   node [
     id "JavaScript"
+    year 1995
   ]
   node [
     id "C++"
+    year 1985
   ]
   node [
     id "Shell"
+    year 1971
   ]
   node [
     id "MATLAB"
+    year 1984
   ]
   node [
     id "HTML"
+    year 1993
   ]
   node [
     id "Java"
+    year 1995
   ]
   node [
     id "CSS"
+    year 1996
   ]
   node [
     id "Dockerfile"
+    year 2013
   ]
   node [
     id "TypeScript"
+    year 2012
   ]
   node [
     id "Inno Setup"
   ]
   node [
     id "Batchfile"
+    year 1981
   ]
   node [
     id "PowerShell"
+    year 2006
   ]
   node [
     id "Groovy"
   ]
   node [
     id "Makefile"
+    year 1976
   ]
   node [
     id "Ruby"
+    year 1995
   ]
   node [
     id "Objective-C"
+    year 1984
   ]
   node [
     id "Objective-C++"
+    year 1985
   ]
   node [
     id "Clojure"
@@ -65,18 +82,22 @@ graph [
   ]
   node [
     id "PHP"
+    year 1995
   ]
   node [
     id "Visual Basic"
   ]
   node [
     id "Perl"
+    year 1987
   ]
   node [
     id "C"
+    year 1972
   ]
   node [
     id "Go"
+    year 2009
   ]
   node [
     id "F#"
@@ -86,21 +107,25 @@ graph [
   ]
   node [
     id "Rust"
+    year 2010
   ]
   node [
     id "C#"
+    year 2000
   ]
   node [
     id "R"
   ]
   node [
     id "Roff"
+    year 1971
   ]
   node [
     id "ShaderLab"
   ]
   node [
     id "Swift"
+    year 2014
   ]
   node [
     id "Lua"
@@ -116,6 +141,7 @@ graph [
   ]
   node [
     id "Assembly"
+    year 1949
   ]
   node [
     id "CMake"
@@ -137,6 +163,7 @@ graph [
   ]
   node [
     id "Emacs Lisp"
+    year 1985
   ]
   node [
     id "Smalltalk"
@@ -209,12 +236,103 @@ graph [
   ]
   node [
     id "Kotlin"
+    year 2011
   ]
   node [
     id "Prolog"
   ]
   node [
     id "FreeMarker"
+  ]
+  node [
+    id "XML"
+  ]
+  node [
+    id "ANTLR"
+  ]
+  node [
+    id "Thrift"
+  ]
+  node [
+    id "Lex"
+  ]
+  node [
+    id "Scala"
+  ]
+  node [
+    id "D"
+  ]
+  node [
+    id "Haskell"
+  ]
+  node [
+    id "IDL"
+  ]
+  node [
+    id "Yacc"
+  ]
+  node [
+    id "Tcl"
+  ]
+  node [
+    id "DIGITAL Command Language"
+  ]
+  node [
+    id "SQLPL"
+  ]
+  node [
+    id "GLSL"
+  ]
+  node [
+    id "Protocol Buffer"
+  ]
+  node [
+    id "HCL"
+  ]
+  node [
+    id "PostScript"
+  ]
+  node [
+    id "Dart"
+  ]
+  node [
+    id "1C Enterprise"
+  ]
+  node [
+    id "OpenEdge ABL"
+  ]
+  node [
+    id "sed"
+  ]
+  node [
+    id "Elm"
+  ]
+  node [
+    id "Nim"
+  ]
+  node [
+    id "Ragel"
+  ]
+  node [
+    id "AutoHotkey"
+  ]
+  node [
+    id "NSIS"
+  ]
+  node [
+    id "ActionScript"
+  ]
+  node [
+    id "ApacheConf"
+  ]
+  node [
+    id "PLSQL"
+  ]
+  node [
+    id "Puppet"
+  ]
+  node [
+    id "Terra"
   ]
   edge [
     source "Jupyter Notebook"

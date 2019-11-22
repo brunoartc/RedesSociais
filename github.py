@@ -7,7 +7,7 @@ def getRepos(username):
     url = 'https://api.github.com/users/' + username + '/repos'
 
 
-    headers = {'Authorization': 'token d6c28f26308f39c533a4399962cbd1e07a048fdc'}
+    headers = {'Authorization': 'token 54cb5036072f8703af52cc648d8fa54dd182fcc9'}
     r = requests.get(url, headers=headers).json()
 
     # username = 'chends888'
@@ -65,16 +65,17 @@ def getRepos(username):
 
 
 def getLanguagesFromRepos(repos, languages_search=[]):
+    headers = {'Authorization': 'token 54cb5036072f8703af52cc648d8fa54dd182fcc9'}
     resp = []
 
     for i in repos:
         #print(repos[i])
 
         # url = 'https://api.github.com/search/code?q=repo:' + repos[i]['full_name'] + "&client_id=1c744c74d696e97f7efa&client_sercret=b3ad57358f058d6c6dc12e49d4066500b8b0a1b5"
-        url = 'https://api.github.com/repos/' + repos[i]['full_name'] + "?client_id=1c744c74d696e97f7efa&client_sercret=b3ad57358f058d6c6dc12e49d4066500b8b0a1b5"
-        r = requests.get(url)
+        url = 'https://api.github.com/repos/' + repos[i]['full_name']
+        r = requests.get(url, headers=headers)
         url_languages = 'https://api.github.com/repos/' + repos[i]['full_name'] + '/languages'
-        r_lang = requests.get(url_languages)
+        r_lang = requests.get(url_languages, headers=headers)
         # print(r.json())
         # print(r)
         if (r.status_code == 200):

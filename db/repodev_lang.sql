@@ -56,3 +56,10 @@ CREATE TABLE uses (
         ON UPDATE CASCADE
 );
 
+
+
+DROP TABLE uses;
+DROP TABLE contains;
+DROP TABLE repolanguage;
+DROP TABLE devlanguage;
+DROP TABLE language;

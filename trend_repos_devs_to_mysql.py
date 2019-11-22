@@ -98,13 +98,17 @@ def reposLangsToMysql():
             print(e)
             repolangs = "B+NULL"
         # print(repolangs)
-        print(repolangs)
+        # print(repolangs)
         sqlconn = MySqlConn()
         repoid = sqlconn.run('SELECT id FROM repo WHERE reponame="%s";' %(reponame))[0][0]
         sqlconn.connection.close()
         for lang in repolangs.keys():
             sqlconn = MySqlConn()
             print(lang)
+            try:
+                langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(lang))[0][0]
+            except:
+                sqlconn.run('INSERT INTO language (name) VALUES ("%s");' %(lang))
             try:
                     langid = sqlconn.run('SELECT id FROM repolanguage WHERE name="%s";' %(lang))[0][0]
                     sqlconn.run('INSERT INTO contains (repoid, langid) VALUES (%d, %d);' %(repoid, langid))
@@ -136,11 +140,15 @@ def devsLangsToMysql():
         except Exception as e:
             print(e)
             devlangs = {"B+NULL": None}
-        print(devlangs)
+        # print(devlangs)
 
         for lang in devlangs.keys():
             # print(devid, lang)
             sqlconn = MySqlConn()
+            try:
+                langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(lang))[0][0]
+            except:
+                sqlconn.run('INSERT INTO language (name) VALUES ("%s");' %(lang))
             try:
                 langid = sqlconn.run('SELECT id FROM devlanguage WHERE name="%s";' %(lang))[0][0]
                 print(devid, langid)
@@ -231,12 +239,13 @@ def devLangToGml():
 def repoLangOneModeToGml():
     tmp = 'graph [\n  directed 0\n'
     sqlconn = MySqlConn()
-    langs = sqlconn.run('SELECT name FROM repolanguage;')
+    # Change to repolanguage when calculating the mode
+    langs = sqlconn.run('SELECT name FROM language;')
     langs_ids = []
     # Creating nodes for languages
     for lang in langs:
         langname = lang[0]
-        langid = sqlconn.run('SELECT id FROM repolanguage WHERE name="%s";' %(langname))[0][0]
+        langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(langname))[0][0]
         langs_ids.append([langid, langname])
         tmp += '  node [\n    id "' + str(langname) + '"\n  ]\n'
 
@@ -305,12 +314,13 @@ def repoLangOneModeToGml():
 def devLangOneModeToGml():
     tmp = 'graph [\n  directed 0\n'
     sqlconn = MySqlConn()
-    langs = sqlconn.run('SELECT name FROM devlanguage;')
+    # Change to devlanguage when calculating the mode
+    langs = sqlconn.run('SELECT name FROM language;')
     langs_ids = []
     # Creating nodes for languages
     for lang in langs:
         langname = lang[0]
-        langid = sqlconn.run('SELECT id FROM devlanguage WHERE name="%s";' %(langname))[0][0]
+        langid = sqlconn.run('SELECT id FROM language WHERE name="%s";' %(langname))[0][0]
         langs_ids.append([langid, langname])
         tmp += '  node [\n    id "' + str(langname) + '"\n  ]\n'
 
@@ -376,9 +386,9 @@ def devLangOneModeToGml():
 if __name__ == '__main__':
     # scrape_devs()
     # scrape_repos()
-    # reposLangsToMysql()
-    # devsLangsToMysql()
-    repoLangToGml()
-    devLangToGml()
-    # repoLangOneModeToGml()
-    # devLangOneModeToGml()
+    reposLangsToMysql()
+    devsLangsToMysql()
+    # repoLangToGml()
+    # devLangToGml()
+    repoLangOneModeToGml()
+    devLangOneModeToGml()
